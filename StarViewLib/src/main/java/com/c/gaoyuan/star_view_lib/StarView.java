@@ -6,11 +6,13 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.Nullable;
+
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +63,7 @@ public class StarView extends View {
         mStarDrawable = typedArray.getResourceId(R.styleable.StarView_checkStarCount, R.drawable.search_result_brands_list_icon_star_g);
         mStarWidth = typedArray.getDimensionPixelSize(R.styleable.StarView_starWidth, 20);
         mStarHeight = typedArray.getDimensionPixelSize(R.styleable.StarView_starHeight, 20);
-        mStarHorizontalSpace = typedArray.getDimensionPixelSize(R.styleable.StarView_starHorizontalSpace, 20);
+        mStarHorizontalSpace = typedArray.getDimensionPixelSize(R.styleable.StarView_starHorizontalSpace, Math.round(mStarWidth/5.0f));
         typedArray.recycle();
 
         mStarViewBeans = new ArrayList<>();

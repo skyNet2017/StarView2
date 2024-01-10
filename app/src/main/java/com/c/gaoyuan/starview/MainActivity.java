@@ -1,9 +1,10 @@
 package com.c.gaoyuan.starview;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.c.gaoyuan.star_view_lib.StarView;
 import com.c.gaoyuan.star_view_lib.StoreItemOnClickListener;
@@ -15,10 +16,6 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        toolbar.setTitle("StarViewDemo");
 
         initStarView();
     }
@@ -32,7 +29,6 @@ public class MainActivity extends AppCompatActivity
         starView.setStarHorizontalSpace(50);
         starView.setStarWidth(150);
         starView.setStarHeight(150);
-
         starView.refreshView();
 
         starView.setStoreItemOnClickListener(this);
